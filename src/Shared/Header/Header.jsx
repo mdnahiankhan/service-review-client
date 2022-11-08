@@ -4,11 +4,14 @@ import image from '../../assets/image.png'
 const Header = () => {
 
     const menuItems = <>
-        <li><Link to='/'>Home</Link></li>
+        <li className='font-semibold'><Link to='/'>Home</Link></li>
+        <li className='font-semibold'><Link to='/'>My Reviews</Link></li>
+        <li className='font-semibold'><Link to='/'>Add Service</Link></li>
+        <li className='font-semibold'><Link to='/'>Log Out</Link></li>
     </>
 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar h-20 mb-8 bg-base-100">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost w-20 bg-violet-400 h-20 rounded-xl">
