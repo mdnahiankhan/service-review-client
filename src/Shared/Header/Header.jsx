@@ -1,13 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import image from '../../assets/image.png'
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 const Header = () => {
-
+    const { user, logOut } = useContext(AuthContext)
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
     const menuItems = <>
         <li className='font-semibold'><Link to='/'>Home</Link></li>
-        <li className='font-semibold'><Link to='/'>My Reviews</Link></li>
-        <li className='font-semibold'><Link to='/'>Add Service</Link></li>
-        <li className='font-semibold'><Link to='/login'>Log In</Link></li>
+
+        <li className='font-semibold'><Link to='/login'> {
+            user?.uid ? <>
+                <li className='font-semibold'><Link to='/'>My Reviews</Link></li>
+                <li className='font-semibold'><Link to='/'>Add Service</Link></li>
+                <span className='mx-2'>{user?.displayName}</span>
+                <button className='font-semibold' onClick={handleLogOut}>Log Out</button>
+            </> : <Link className='font-semibold' to='/login'>Login</Link>
+        }</Link></li>
+        <li>{user?.photoURL ?
+            <img className='rounded-full h-20' src={user?.photoURL} title={user?.displayName} alt="" /> : <>
+            </>
+        }</li>
     </>
 
     return (
