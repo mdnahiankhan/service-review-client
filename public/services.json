@@ -1,7 +1,6 @@
 [
     {
         "img": "https://i.pinimg.com/564x/21/89/89/218989f0c8414772ccb02c7bbc8e569b.jpg",
-        "_id": "636a6fd4321a1e5738cab0cf",
         "price": 100,
         "title": "ONE HOUR PACKAGE",
         "age": 18,
@@ -11,7 +10,6 @@
     },
     {
         "img": "https://i.pinimg.com/564x/ee/d1/b3/eed1b3225c8dad381883a446b589294a.jpg",
-        "_id": "636a6fd49c1ddd5e0dce1862",
         "price": 120,
         "title": "TWO HOUR PACKAGE",
         "age": 18,
@@ -21,7 +19,6 @@
     },
     {
         "img": "https://i.pinimg.com/564x/31/33/c8/3133c883f4d8f0961dbbeb331808fdf8.jpg",
-        "_id": "636a6fd4572604bee50f5562",
         "price": 150,
         "title": "FIVE HOUR PACKAGE",
         "age": 18,
@@ -31,7 +28,6 @@
     },
     {
         "img": "https://i.pinimg.com/564x/4c/56/5a/4c565af4f8ea94668894392d29727375.jpg",
-        "_id": "636a6fd440f695b8801724da",
         "price": 170,
         "title": "8 HOUR PACKAGE",
         "age": 18,
@@ -41,7 +37,6 @@
     },
     {
         "img": "https://i.pinimg.com/564x/e3/ea/c3/e3eac3eb80109d995f3533002983f88b.jpg",
-        "_id": "636a6fd4c84470be0e164add",
         "price": 200,
         "title": "12 HOUR PACKAGE",
         "age": 18,
@@ -51,7 +46,6 @@
     },
     {
         "img": "https://i.pinimg.com/564x/04/27/2e/04272e0a80c7743a68bfa8bf967aa6cb.jpg",
-        "_id": "636a6fd4c84470be0e165add",
         "price": 250,
         "title": "16 HOUR PACKAGE",
         "age": 18,
