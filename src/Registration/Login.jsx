@@ -10,14 +10,14 @@ const Login = () => {
         console.log(email, password);
     }
     return (
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2'>
-            <div className='flex'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 p-10'>
+            <div>
                 <img src={img} alt="" />
             </div>
             <div className="w-full max-w-md p-4 rounded-md shadow sm:p-8 dark:bg-gray-900 dark:text-gray-100 ">
-                <h2 className="mb-3 text-3xl font-semibold text-center">Login to your account</h2>
-                <p className="text-sm text-center dark:text-gray-400">Dont have account?
-                    <Link href="#" rel="noopener noreferrer" className="focus:underline hover:underline">Sign up here</Link>
+                <h2 className="mb-3 text-3xl font-semibold text-center">Login Using your account</h2>
+                <p className="text-sm text-center dark:text-gray-400 ">Dont have account?
+                    <Link to='/signUp' href="#" rel="noopener noreferrer" className="focus:underline hover:underline dark:text-violet-400">Sign up here</Link>
                 </p>
                 <div className="my-6 space-y-4">
                     <button aria-label="Login with Google" type="button" className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-400 focus:ring-violet-400">
@@ -38,23 +38,18 @@ const Login = () => {
                     <p className="px-3 dark:text-gray-400">OR</p>
                     <hr className="w-full dark:text-gray-400" />
                 </div>
-                <form onSubmit={handleLogin} className="space-y-8 ng-untouched ng-pristine ng-valid">
-                    <div className="space-y-4">
-                        <div className="space-y-2">
-                            <label for="email" className="block text-sm">Email address</label>
-                            <input type="email" name="email" id="email" placeholder="leroy@jenkins.com" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
-                        </div>
-                        <div className="space-y-2">
-                            <div className="flex justify-between">
-                                <label for="password" className="text-sm">Password</label>
-                                <Link rel="noopener noreferrer" href="#" className="text-xs hover:underline dark:text-gray-400">Forgot password?</Link>
-                            </div>
-                            <input type="password" name="password" id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
-                        </div>
+                <form onSubmit={handleLogin} className="space-y-12">
+                    <div>
+                        <label htmlFor="">Enter Your email</label>
+                        <input type="text" name='email' placeholder="enter your email" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
                     </div>
-                    <button type="button" className="w-full px-8 py-3 font-semibold rounded-md dark:bg-violet-400 dark:text-gray-900">Sign in</button>
-                </form>
+                    <div>
+                        <label htmlFor="">Password</label>
+                        <input type="password" name='password' placeholder="enter your password" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+                    </div>
+                    <button className='w-full px-8 py-3 font-semibold rounded-md dark:bg-violet-400 '>Sign In</button>
 
+                </form>
             </div>
         </div>
     );
