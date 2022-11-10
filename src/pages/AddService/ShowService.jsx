@@ -1,3 +1,4 @@
+
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import ServiceRow from './ServiceRow';
@@ -10,6 +11,19 @@ const ShowService = () => {
             .then(res => res.json())
             .then(data => setorders(data))
     }, [user?.email])
+
+    const handleDelete = (id) => {
+        const proceed = window.confirm('Are you sure,you want to cancel this order')
+        if (proceed) {
+            fetch(`http://localhost:5000/orders/${id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                })
+        }
+    }
     return (
         <div>
             <h2 className="text-5xl">You have {orders.length} orders</h2>

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const ServiceDetails = () => {
@@ -33,7 +34,10 @@ const ServiceDetails = () => {
             .then(data => {
                 console.log(data)
                 if (data.acknowledged) {
-                    alert('Order placed successfully')
+                    // alert('Order placed successfully')
+                    toast.success('Order places successfully', {
+                        position: "top-center"
+                    })
                     form.reset()
                 }
             })
