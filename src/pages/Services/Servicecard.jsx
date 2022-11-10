@@ -10,7 +10,7 @@ const Servicecard = ({ service }) => {
                 <h2 className="text-xl font-semibold tracking-wide text-violet-600">{title}</h2>
             </div>
             <p className="text-orange-600 font-bold">{description}</p>
-            <Link to={`/addService/${_id}`}><button className="btn btn-active btn-primary">Add Service</button></Link>
+            <Link to={`/addService/${_id}`}><button className="btn btn-active btn-primary">Book Now</button></Link>
         </div>
     );
 };
