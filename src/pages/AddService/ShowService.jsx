@@ -22,7 +22,7 @@ const ShowService = () => {
                             </th>
                             <th>Name</th>
                             <th>Job</th>
-                            <th>Message</th>
+                            <th>Review</th>
                             <th>Email</th>
 
                         </tr>
