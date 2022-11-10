@@ -1,8 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 
 const Review = () => {
+    const [review, setReiview] = useState([])
+    console.log(review);
 
     const reviewHandler = event => {
         event.preventDefault();
@@ -21,7 +22,7 @@ const Review = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                setReiview(data)
                 if (data.acknowledged) {
 
                     toast.success('Your Review places successfully', {
