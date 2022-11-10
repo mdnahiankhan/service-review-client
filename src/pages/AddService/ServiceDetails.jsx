@@ -36,7 +36,7 @@ const ServiceDetails = () => {
                 if (data.acknowledged) {
                     // alert('Order placed successfully')
                     toast.success('Order places successfully', {
-                        position: "top-center"
+                        position: "top-center",
                     })
                     form.reset()
                 }
