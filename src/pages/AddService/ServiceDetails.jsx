@@ -34,7 +34,7 @@ const ServiceDetails = () => {
             .then(data => {
                 console.log(data)
                 if (data.acknowledged) {
-                    // alert('Order placed successfully')
+
                     toast.success('Order places successfully', {
                         position: "top-center",
                     })

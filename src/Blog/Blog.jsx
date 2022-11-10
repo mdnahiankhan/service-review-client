@@ -2,7 +2,7 @@ import React from 'react';
 
 const Blog = () => {
     return (
-        <div className="dark:bg-gray-800 dark:text-gray-100">
+        <div className="dark:bg-gray-500 dark:text-gray-100 mt-5 rounded-xl mb-5 font-serif">
             <div className="container max-w-4xl px-10 py-6 mx-auto rounded-lg shadow-sm dark:bg-gray-900 mt-5">
                 <div className="mt-3">
                     <h1 rel="noopener noreferrer" href="#" className="text-2xl font-bold bg-white text-black text-center rounded-md">Difference between SQL and NoSQL</h1>

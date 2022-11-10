@@ -22,7 +22,7 @@ const ServiceRow = ({ order, handleDelete, handleUpdate }) => {
                         <div className="rounded w-24 h-24">
                             {
                                 orderService?.img &&
-                                <img src={orderService?.img} alt="Avatar Tailwind CSS Component" />}
+                                <img src={orderService?.img} alt="" />}
                         </div>
                     </div>
                     <div>
