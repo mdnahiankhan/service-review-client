@@ -10,11 +10,12 @@ const ShowService = () => {
     useEffect(() => {
         fetch(`http://localhost:5000/orders?email=${user?.email}`, {
             headers: {
-                authorization: `Bearer ${localStorage.getItem('token')}`
-            }
+                'content-type': 'application/json'
+            },
         })
             .then(res => res.json())
             .then(data => setorders(data))
+            .catch(error => { console.log(error); })
     }, [user?.email])
 
     const handleDelete = (id) => {

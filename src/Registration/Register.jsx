@@ -13,7 +13,7 @@ const Register = () => {
         const photoURL = form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
-        createUser(email, password)
+        createUser(email, password, name, photoURL)
             .then(result => {
                 const user = result.user
                 console.log(user);
@@ -41,7 +41,7 @@ const Register = () => {
                     </div>
                     <div>
                         <label htmlFor="">Enter Your email</label>
-                        <input type="text" required name='email' placeholder="enter your email" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-100 dark:text-gray-100 focus:dark:border-violet-400" />
+                        <input type="text" required name='email' placeholder="enter your email" className="w-full px-3 py-2 border rounded-md dark:border-gray-700 dark:bg-gray-100 dark:text-gray-900 focus:dark:border-violet-400" />
                     </div>
                     <div>
                         <label htmlFor="">Password</label>

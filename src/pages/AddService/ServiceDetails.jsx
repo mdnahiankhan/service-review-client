@@ -10,7 +10,7 @@ const ServiceDetails = () => {
         event.preventDefault()
         const form = event.target;
         const name = `${form.firstname.value} ${form.lastname.value}`;
-        const phone = user?.email || 'unregistered';
+        const phone = user?.phone || 'unregistered';
         const email = form.email.value;
         const feedback = form.feedback.value;
 
