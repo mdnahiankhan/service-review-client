@@ -8,7 +8,7 @@ const ShowService = () => {
     const { user } = useContext(AuthContext);
     const [orders, setorders] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/orders?email=${user?.email}`, {
+        fetch(`https://service-review-server-nine.vercel.app/orders?email=${user?.email}`, {
             headers: {
                 'content-type': 'application/json'
             },
@@ -21,7 +21,7 @@ const ShowService = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure,you want to cancel this order')
         if (proceed) {
-            fetch(`http://localhost:5000/orders/${id}`, {
+            fetch(`https://service-review-server-nine.vercel.app/orders/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -37,7 +37,7 @@ const ShowService = () => {
     }
 
     const handleUpdate = id => {
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`https://service-review-server-nine.vercel.app/orders/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

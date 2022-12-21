@@ -33,12 +33,12 @@ const router = createBrowserRouter([
             {
                 path: '/addService/:id',
                 element: <PrivateRoutes><ServiceDetails></ServiceDetails></PrivateRoutes>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://service-review-server-nine.vercel.app/services/${params.id}`)
             },
             {
                 path: '/addService/:id',
                 element: <Addservice></Addservice>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://service-review-server-nine.vercel.app/services/${params.id}`)
             },
             {
                 path: '/blog',
