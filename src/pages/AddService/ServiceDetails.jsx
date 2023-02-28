@@ -24,7 +24,7 @@ const ServiceDetails = () => {
             email,
             feedback
         }
-        fetch('http://localhost:5000/orders', {
+        fetch('https://service-review-server-mdnahiankhan.vercel.app/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

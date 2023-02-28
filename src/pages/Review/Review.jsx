@@ -8,7 +8,7 @@ const Review = () => {
     // const [reviews, setReiview] = useState([])
     const { data: reviews = [], refetch } = useQuery({
         queryKey: ['review'],
-        queryFn: () => fetch('http://localhost:5000/review')
+        queryFn: () => fetch('https://service-review-server-mdnahiankhan.vercel.app/review')
             .then(res => res.json())
     })
 
@@ -21,7 +21,7 @@ const Review = () => {
         const reviews = {
             review
         }
-        fetch('http://localhost:5000/review', {
+        fetch('https://service-review-server-mdnahiankhan.vercel.app/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -51,7 +51,7 @@ const Review = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure,you want to delete this order')
         if (proceed) {
-            fetch(`http://localhost:5000/review/${id}`, {
+            fetch(`https://service-review-server-mdnahiankhan.vercel.app/review/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const Update = () => {
@@ -7,12 +7,12 @@ const Update = () => {
 
     const [reviews, setReview] = useState(review)
 
-
+    const navaigate = useNavigate()
 
     const reviewHandler = event => {
         event.preventDefault();
         // console.log(reviews);
-        fetch(`http://localhost:5000/review/${review._id}`, {
+        fetch(`https://service-review-server-mdnahiankhan.vercel.app/review/${review._id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'
@@ -25,6 +25,7 @@ const Update = () => {
                     toast.success('Updated Successfully', {
                         position: "top-center",
                     })
+                    navaigate('/review')
                     console.log(data);
                     event.target.reset();
                 }

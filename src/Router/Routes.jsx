@@ -34,12 +34,12 @@ const router = createBrowserRouter([
             {
                 path: '/addService/:id',
                 element: <PrivateRoutes><ServiceDetails></ServiceDetails></PrivateRoutes>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://service-review-server-mdnahiankhan.vercel.app/services/${params.id}`)
             },
             {
                 path: '/addService/:id',
                 element: <Addservice></Addservice>,
-                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://service-review-server-mdnahiankhan.vercel.app/services/${params.id}`)
             },
             {
                 path: '/blog',
@@ -56,7 +56,7 @@ const router = createBrowserRouter([
             {
                 path: '/update/:id',
                 element: <Update></Update>,
-                loader: ({ params }) => fetch(`http://localhost:5000/review/${params.id}`)
+                loader: ({ params }) => fetch(`https://service-review-server-mdnahiankhan.vercel.app/review/${params.id}`)
             }
         ]
     }
