@@ -50,12 +50,14 @@ const carouselData = [
 
 const Banner = () => {
     return (
-        <div className="carousel w-full rounded-xl py-10">
-            {
-                carouselData.map(slide => <Carouselitem key={slide.id}
-                    slide={slide}
-                ></Carouselitem>)
-            }
+        <div>
+            <div className="carousel w-full rounded-xl ">
+                {
+                    carouselData.map(slide => <Carouselitem key={slide.id}
+                        slide={slide}
+                    ></Carouselitem>)
+                }
+            </div>
         </div>
     );
 };

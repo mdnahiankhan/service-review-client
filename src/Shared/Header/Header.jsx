@@ -18,35 +18,37 @@ const Header = () => {
                 <li className='font-semibold'><Link to='/review'>My Reviews</Link></li>
                 <li className='font-semibold'><Link to='/myorders'>My Orders</Link></li>
                 <span className='mx-2'>{user?.displayName}</span>
-                <button className='font-semibold' onClick={handleLogOut}>Log Out</button>
+                <li className='font-semibold' onClick={handleLogOut}>Log Out</li>
             </> : <Link className='font-semibold' to='/login'>Login</Link>
         }</Link></li>
         <li>{user?.photoURL ?
-            <img className='rounded-full h-20' src={user?.photoURL} title={user?.displayName} alt="" /> : <>
+            <img className='w-12 h-12 rounded-full ring-2 ring-offset-4 dark:bg-gray-500 ring-violet-400 ring-offset-gray-800' src={user?.photoURL} title={user?.displayName} alt="" /> : <>
             </>
         }</li>
     </>
 
     return (
-        <div className="navbar h-20 mt-5 bg-base-100">
-            <div className="navbar-start">
-                <div className="dropdown">
-                    <label tabIndex={0} className="btn btn-ghost w-20 bg-violet-400 h-20 rounded-xl">
-                        <img src={image} alt="" />
-                    </label>
-                    <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+        <div>
+            <div className="navbar h-20 mt-5 bg-base-100 max-w-screen-xl mx-auto">
+                <div className="navbar-start">
+                    <div className="dropdown">
+                        <label tabIndex={0} className="btn btn-ghost w-20 bg-violet-400 h-20 rounded-xl">
+                            <img src={image} alt="" />
+                        </label>
+                        <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                            {menuItems}
+                        </ul>
+                    </div>
+                    <Link className="btn btn-ghost normal-case text-xl">Making Memories</Link>
+                </div>
+                <div className="navbar-center hidden lg:flex">
+                    <ul className="menu menu-horizontal p-0">
                         {menuItems}
                     </ul>
                 </div>
-                <Link className="btn btn-ghost normal-case text-xl">Making Memories</Link>
-            </div>
-            <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal p-0">
-                    {menuItems}
-                </ul>
-            </div>
-            <div className="navbar-end">
-                <Link className="btn">Get started</Link>
+                <div className="navbar-end">
+                    <Link className="btn btn-outline btn-primary">Get started</Link>
+                </div>
             </div>
         </div>
     );

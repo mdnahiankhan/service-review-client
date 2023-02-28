@@ -1,6 +1,4 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { useState } from 'react';
-import { useEffect } from 'react';
 import { toast } from 'react-toastify';
 import Loading from './Loading';
 import ShowReview from './ShowReview';
@@ -10,7 +8,7 @@ const Review = () => {
     // const [reviews, setReiview] = useState([])
     const { data: reviews = [], refetch } = useQuery({
         queryKey: ['review'],
-        queryFn: () => fetch('https://service-review-server-nine.vercel.app/review')
+        queryFn: () => fetch('http://localhost:5000/review')
             .then(res => res.json())
     })
 
@@ -23,7 +21,7 @@ const Review = () => {
         const reviews = {
             review
         }
-        fetch('https://service-review-server-nine.vercel.app/review', {
+        fetch('http://localhost:5000/review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -43,10 +41,17 @@ const Review = () => {
             })
             .catch(error => console.error(error))
     }
+
+    const handleUpdate = (id) => {
+
+    }
+
+
+
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure,you want to delete this order')
         if (proceed) {
-            fetch(`https://service-review-server-nine.vercel.app/review/${id}`, {
+            fetch(`http://localhost:5000/review/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -62,7 +67,7 @@ const Review = () => {
     }
     return (
         <div>
-            <div className="container flex flex-col w-full max-auto p-8 shadow-sm rounded-xl lg:p-12 dark:bg-gray-100 dark:text-gray-100 mb-5 ">
+            <div className="container flex flex-col w-full max-auto p-8 shadow-sm rounded-xl lg:p-12 dark:bg-gray-100 dark:text-gray-100 mb-5 max-w-[1440px] mx-auto ">
                 <div className="flex flex-col items-center w-full">
                     <h2 className="text-3xl font-semibold text-center text-black">Your valueable opinion matters!</h2>
                     <div className="flex flex-col items-center py-6 space-y-3">
@@ -70,7 +75,7 @@ const Review = () => {
                     </div>
                     <div className="flex flex-col w-full">
                         <form onSubmit={reviewHandler}>
-                            <textarea name="review" className="textarea mt-5 w-full textarea-bordered text-black" placeholder="Your feedback"></textarea>
+                            <textarea name="review" className="textarea mt-5 w-full textarea-bordered text-black" placeholder="Your feedback" required></textarea>
                             <input type="submit" className='btn btn-success' value="Please give Your review here" />
                         </form>
                     </div>
@@ -80,6 +85,7 @@ const Review = () => {
                 reviews.map(rev => <ShowReview key={rev._id}
                     rev={rev}
                     handleDelete={handleDelete}
+                    handleUpdate={handleUpdate}
                 ></ShowReview>)
             }
         </div>

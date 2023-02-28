@@ -7,6 +7,7 @@ import ServiceDetails from "../pages/AddService/ServiceDetails";
 import ShowService from "../pages/AddService/ShowService";
 import Home from "../pages/Home/Home";
 import Review from "../pages/Review/Review";
+import Update from "../pages/Update";
 import Login from "../Registration/Login";
 import Register from "../Registration/Register";
 import PrivateRoutes from "./PrivateRoute/PrivateRoutes";
@@ -33,12 +34,12 @@ const router = createBrowserRouter([
             {
                 path: '/addService/:id',
                 element: <PrivateRoutes><ServiceDetails></ServiceDetails></PrivateRoutes>,
-                loader: ({ params }) => fetch(`https://service-review-server-nine.vercel.app/services/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
             },
             {
                 path: '/addService/:id',
                 element: <Addservice></Addservice>,
-                loader: ({ params }) => fetch(`https://service-review-server-nine.vercel.app/services/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
             },
             {
                 path: '/blog',
@@ -51,6 +52,11 @@ const router = createBrowserRouter([
             {
                 path: '/review',
                 element: <Review></Review>
+            },
+            {
+                path: '/update/:id',
+                element: <Update></Update>,
+                loader: ({ params }) => fetch(`http://localhost:5000/review/${params.id}`)
             }
         ]
     }

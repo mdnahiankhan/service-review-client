@@ -5,7 +5,7 @@ import videographer from '../../../assets/cameraMan/cameraMan.web2.jpg'
 const About = () => {
     return (
         <div>
-            <section className="py-6 dark:bg-gray-600 dark:text-gray-100 mb-5">
+            <section className="py-6  dark:text-gray-600 mb-5">
                 <div className="container flex flex-col items-center justify-center p-4 mx-auto sm:p-10">
                     <p className="p-2 text-sm font-medium tracking-wider text-center uppercase">MaKing Memories team</p>
                     <h1 className="text-4xl font-bold leading-none text-center sm:text-5xl">The talented people behind the scenes</h1>
